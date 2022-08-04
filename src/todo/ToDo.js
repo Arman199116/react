@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import Delete from "./../DeleteToDos";
 import { Context } from "./../Context";
 
-const ToDo = ({todo}) => {
+const ToDo = ({todo, index}) => {
 
     const {dispatch} = useContext(Context);
     const [calculation, setCalculation] = useState(0);
@@ -16,7 +16,7 @@ const ToDo = ({todo}) => {
     };
     return (
         <div className="box">
-            <div>{todo.task} length - {calculation} </div>
+            <div>{index} {todo.task} length - {calculation} </div>
             <input type="checkbox" checked={todo.complete} onChange={setValue} />
             <Delete id={todo.id} />
         </div>

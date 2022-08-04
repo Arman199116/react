@@ -1,4 +1,3 @@
-
 export function reduser (state, action) {
     switch (action.type) {
         case "Complete":
@@ -12,11 +11,9 @@ export function reduser (state, action) {
                 }
             });
         case "Delete":
-            return state.filter((todo, index) => {
+            return state.filter((todo) => {
                 return todo.id !== action.id;
             })
-            console.log('state');
-            return state;
         case "Add":
             return [...state, action.todo];
         default:

@@ -27,7 +27,7 @@ const Input = () => {
 
     return (
         <div className="box">
-            <input ref={inputRef} onChange={(e) => {setInputValue(e.target.value)}} />
+            <input ref={inputRef} onChange={(e) => {setInputValue(e.target.value)}} placeholder={'New ToDo'} />
             <button onClick={ onAddHandler }>Add</button>
         </div>
     );

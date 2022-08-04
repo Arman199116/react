@@ -6,9 +6,9 @@ const ToDoList = () => {
     const {toDoList} = useContext(Context);
     return (
         <div>
-            {toDoList.map(todo => {
+            {toDoList.map((todo, index) => {
                 return (
-                    <ToDo key={todo.id} todo={todo} />
+                    <ToDo key={todo.id} todo={todo} index={index + 1} />
                 )
             })}
         </div>
