@@ -26,10 +26,10 @@ const Input = () => {
     }
 
     return (
-        <>
+        <div className="box">
             <input ref={inputRef} onChange={(e) => {setInputValue(e.target.value)}} />
             <button onClick={ onAddHandler }>Add</button>
-        </>
+        </div>
     );
 };
 

@@ -1,35 +1,24 @@
-import React, {useState, useEffect, useRef, useMemo} from 'react';
-
-const colors = {
-    cyan : "cyan",
-    blue : "blue",
-    green : "green"
-}
+import React, {useState, useEffect, useRef} from 'react';
 
 const Header = () => {
     
-    const [color, setColor] = useState(colors.cyan);
-    const selectRef = useRef();
-    const colorValue = (e) => {
-        setColor(e.target.value);
-    }
+    const [color, setColor] = useState('#00ffff');
+    const inputColorRef = useRef();
+    const headerRef = useRef();
+    const colorValue = () => {
+        setColor(inputColorRef.current.value);
+    };
     
     useEffect(
         () => {
-           document.getElementsByClassName('selectHeader')[0].style.background = selectRef.current.value;
+            headerRef.current.style.background = color;
         },
         [color]
     )
     return (
-        <header className={"selectHeader"} >
+        <header ref={headerRef} >
             <h1>To Do List</h1>
-            <select  ref={selectRef} onChange={colorValue}>
-                {Object.entries(colors).map(([name, value]) => (
-                    <option key={`color--${name}`} value={value}>
-                        {name}
-                    </option>
-                ))}
-            </select>
+            <input type={"color"} ref={inputColorRef} onChange={colorValue} value={color} />
         </header>
     )
 };

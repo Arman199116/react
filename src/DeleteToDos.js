@@ -8,7 +8,7 @@ export default function Delete({id}) {
        setUniqueId(uniqueId + 1);
     }
     return (
-        <button onClick={deleteToDo} > 
+        <button className="extra" onClick={deleteToDo} > 
             Delete
         </button>
     )

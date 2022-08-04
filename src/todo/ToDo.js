@@ -15,7 +15,7 @@ const ToDo = ({todo}) => {
         dispatch({type : 'Complete', id : todo.id});
     };
     return (
-        <div>
+        <div className="box">
             <div>{todo.task} length - {calculation} </div>
             <input type="checkbox" checked={todo.complete} onChange={setValue} />
             <Delete id={todo.id} />

@@ -12,12 +12,10 @@ export function reduser (state, action) {
                 }
             });
         case "Delete":
-            state.find((todo, index) => {
-                if (todo.id === action.id) {
-                    state.splice(index, 1);
-                    return state;
-                }
+            return state.filter((todo, index) => {
+                return todo.id !== action.id;
             })
+            console.log('state');
             return state;
         case "Add":
             return [...state, action.todo];
