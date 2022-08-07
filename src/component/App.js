@@ -5,7 +5,8 @@ import Input from "./../Input";
 import { Context } from "./../Context.js";
 import './../styles/App.css';
 import  {reduser}  from "../functions/reduser";
-
+import  UseTransition  from "./../UseTransition";
+import  UseImperativeHandle  from "./../UseImperativeHandle";
 
 function App() {
 
@@ -14,11 +15,11 @@ function App() {
 
     return (
         <Context.Provider value={{toDoList, dispatch, uniqueId, setUniqueId}}>
-            <div className="App">
-                <Header />
-                <Input />
-                <ToDoList />
-            </div>
+            <Header />
+            <Input />
+            <ToDoList />
+            <UseTransition />
+            <UseImperativeHandle />
         </Context.Provider>
     );
 }

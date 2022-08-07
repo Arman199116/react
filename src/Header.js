@@ -8,7 +8,6 @@ const Header = () => {
     const colorValue = () => {
         setColor(inputColorRef.current.value);
     };
-    
     useEffect(
         () => {
             headerRef.current.style.background = color;

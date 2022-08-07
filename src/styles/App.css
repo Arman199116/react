@@ -1,5 +1,4 @@
 body {
-    
     margin: 0;
     display: grid;
     place-items: center;
@@ -28,5 +27,9 @@ button {
 
 .extra {
     background-color: rgb(201, 152, 152);
+}
+#root {
+    display: grid;
+    place-items: center;
 }
   

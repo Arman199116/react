@@ -2,10 +2,9 @@ import React, {useContext} from "react";
 import { Context } from "./Context";
 
 export default function Delete({id}) {
-    const {dispatch, setUniqueId, uniqueId} = useContext(Context);
+    const {dispatch} = useContext(Context);
     function deleteToDo() {
-       dispatch({type : "Delete", id : id});
-       setUniqueId(uniqueId + 1);
+        dispatch({type : "Delete", id : id});
     }
     return (
         <button className="extra" onClick={deleteToDo} > 

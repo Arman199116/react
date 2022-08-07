@@ -4,7 +4,7 @@ export function reduser (state, action) {
             return state.map(todo => {
                 if (todo.id === action.id) {
                     return {
-                        ...todo, complete : !todo.complete
+                        ...todo, completed : !todo.completed
                     };
                 } else {
                     return todo;

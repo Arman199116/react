@@ -3,7 +3,7 @@ import { Context } from "./Context";
 
 const Input = () => {
 
-    const { uniqueId, setUniqueId, dispatch} = useContext(Context);
+    const {uniqueId, setUniqueId, dispatch} = useContext(Context);
     const inputRef = useRef(null);
     const [inputValue, setInputValue] = useState('');
 
@@ -12,14 +12,15 @@ const Input = () => {
             return;
         }
         setUniqueId(uniqueId + 1);
+        console.log(uniqueId);
         const toDo = {
             id: uniqueId,
-            task: inputValue,
-            complete: false
+            title: inputValue,
+            completed: false
         };
-        
+
         dispatch({type : "Add", todo : toDo});
-        
+
         setInputValue('');
         inputRef.current.value = "";
         inputRef.current.focus();
